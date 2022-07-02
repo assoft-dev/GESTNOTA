@@ -2,6 +2,9 @@
 
 namespace INota.Models
 {
+    /// <summary>
+    /// teste
+    /// </summary>
     public class Documentos
     {
         public string Id { get; set; }
