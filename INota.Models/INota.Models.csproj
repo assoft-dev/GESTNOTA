@@ -32,6 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,21 +49,33 @@
     <Compile Include="Cofins.cs" />
     <Compile Include="Credenciadoracartao.cs" />
     <Compile Include="Detalhado.cs" />
+    <Compile Include="DocumentoEletronico.cs" />
+    <Compile Include="DocumentoNegociacao.cs" />
     <Compile Include="Documentos.cs" />
     <Compile Include="Endereco.cs" />
+    <Compile Include="EventoNFE.cs" />
     <Compile Include="Forma.cs" />
+    <Compile Include="FormaEmissao.cs" />
     <Compile Include="Icms.cs" />
     <Compile Include="Impostos.cs" />
     <Compile Include="Ipi.cs" />
     <Compile Include="Iten.cs" />
+    <Compile Include="ModalidadeFrete.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Percentualaproximadotributos.cs" />
+    <Compile Include="Pessoa.cs" />
     <Compile Include="Pis.cs" />
     <Compile Include="Poraliquota.cs" />
     <Compile Include="Poraliquota1.cs" />
     <Compile Include="Poraliquota2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Simplificado.cs" />
+    <Compile Include="StatusDocumento.cs" />
+    <Compile Include="StatusDocumentoEletronico.cs" />
+    <Compile Include="TipoPagamento.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
