@@ -16,9 +16,9 @@ namespace INota.Controllers.Repository
         public string Urlbase { get { return "https://api.enotasgw.com.br/v2/empresas"; } }
         public string Token { get; set; }
 
-        public Repository()
+        public Repository(string Token)
         {
-
+            this.Token = Token;
         }
         public async Task<Response> PostAsync(Guid empresaId, Documento documento)
         {
