@@ -120,5 +120,53 @@ namespace INota.Controllers.Repository
                 };
             }
         }
+
+        public async Task<Response> DeleteAsync(Guid empresaId, string documento)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    httpClient.DefaultRequestHeaders.Clear();
+                    httpClient.DefaultRequestHeaders.Add("Authorization", string.Format("Basic {0}", Token));
+                    httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    using (var request = new HttpRequestMessage(HttpMethod.Delete,
+                                                                string.Format("{0}/{1}/nfc-e/{2}", Urlbase, empresaId, documento)))
+                    {
+                        using (var response = await httpClient.SendAsync(request))
+                        {
+                            var resultContent = await response.Content.ReadAsStringAsync();
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                var list = JsonConvert.DeserializeObject<List<Documento>>(resultContent);
+                                return new Response
+                                {
+                                    IsSuccess = true,
+                                    Result = list
+                                };
+                            }
+                            else
+                            {
+                                return new Response
+                                {
+                                    IsSuccess = false,
+                                    Message = ((int)response.StatusCode) + " - " + response.ReasonPhrase,
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception exe)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = exe.Message
+                };
+            }
+        }
     }
 }

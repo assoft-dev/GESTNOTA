@@ -7,17 +7,14 @@
     public interface IRepository<T> where T : class
     {
         #region Metodos Genericos
-        //Task<Response> GetListAsync();
-
-        //Task<Response> GetListAsync(string i);
-        //Task<Response> DeleteAsync(int id);
-        //Task<Response> DeleteAsync(T model);
-        //Task<string> ExportToExcelAsync();
-        //Task<Response> GetListFirstOrDefaultAsync();
-
-
+        //Emitir
         Task<Response> PostAsync(Guid i, T documento);
+
+        //Listagem
         Task<Response> GetListAsync(Guid i, string documento);
+
+        //Apagar
+        Task<Response> DeleteAsync(Guid i, string documento);
         #endregion
     }
 }
