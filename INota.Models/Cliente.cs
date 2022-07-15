@@ -1,5 +1,6 @@
 ﻿namespace INota.Models 
 {
+    //teste
     public class Cliente
     {
         public Endereco endereco { get; set; }
