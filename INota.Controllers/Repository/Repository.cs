@@ -13,6 +13,11 @@ namespace INota.Controllers.Repository
 {
     public class Repository : IRepository<Documento>
     {
+        //  DOCUMENTACAO DA API
+        //  https://docs.enotasgw.com.br/v2/reference/introdu%C3%A7%C3%A3o
+        //  #####
+
+
         public string Urlbase { get { return "https://api.enotasgw.com.br/v2/empresas"; } }
         public string Token { get; set; }
 
